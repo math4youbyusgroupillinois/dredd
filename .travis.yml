@@ -19,3 +19,13 @@ script:
   - "npm run test:hooks-handlers"
 after_success:
   - "npm run coveralls"
+deploy:
+  provider: "npm"
+  skip_cleanup: true
+  email: "sre@apiary.io"
+  api_key:
+    secure: "b8eq7IWr2cDPR6+wHAgfnXzJ41KePcNVk83oKCroRwqRsgJalkV5WFh/btz8lP2u0Vf806LbQAAlPEmN4mAKkbn1PsTakSZxdtzID3mTipdnnisOi1r0pa479OybrzW/ttTs8WSOw6eEY690hSErfGqyUNlB1H4nvAu4bmn9lsk="
+  on:
+    repo: "apiaryio/dredd"
+    branch: "master"
+    node: "6"
